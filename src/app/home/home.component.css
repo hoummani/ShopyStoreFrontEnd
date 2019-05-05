@@ -1,0 +1,20 @@
+@-webkit-keyframes myfirst {
+  from {
+  background-position: bottom center;
+  background-size: cover;
+  }
+  to {
+    background-position: top center;
+    background-size: cover;
+  }
+}
+
+
+.img{
+  background-repeat: norepeat;
+    -webkit-animation: myfirst 20s; /* Chrome, Safari, Opera */
+    animation: myfirst 2000;
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
+
+}
