@@ -1,3 +1,101 @@
-<p>
-  login works!
-</p>
+<div class="container">
+    <p class="header center-align flow-text grey-text text-darken-2">LOGIN FORM !</p>
+
+    <div id="login-page" class="row">
+        <div class="col s12 z-depth-6 card-panel">
+            <form class="login-form">
+              <div class="row"></div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select>
+                          <option value="" disabled selected>Login en tant que</option>
+                          <option value="1">Administrateur</option>
+                          <option value="2">Etudiant</option>
+
+                        </select>
+                        <label>Type de compte</label>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">email</i>
+                      <input class="validate" id="email" type="email">
+                      <!--   show message   -->
+                      <!--
+                      <div id="email-error">
+                          <i class="material-icons red-text darken-2 left">warning</i>
+                          <span class="red-text darken-4">Email incorredt !</span>
+                        </div>
+                      -->
+                      <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">lock</i>
+                      <input id="password" type="password">
+                      <!--  show messages  -->
+                      <!--
+                      <div id="passw-error">
+                        <i class="material-icons red-text darken-2 left">warning</i>
+                        <span class="red-text darken-4">Password incorredt !</span>
+                      </div>
+                    -->
+
+                      <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="input-field col s12 m12 l12  login-text">
+                      <!--
+                        <input type="checkbox" id="remember-me" />
+
+                        <label for="remember-me">Remember me</label>
+                      -->
+                        <label class="right">
+                          <input type="checkbox"  class="filled-in"/>
+                          <span>Remember me !</span>
+                        </label>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <a href="#" class="btn waves-effect waves-light col s12">Login</a>
+                    </div>
+                </div>
+                <!--              ##################  -->
+                <!--           all form error                 -->
+                <!--
+                <div id="all-form-error">
+                  <ul >
+                    <li  class="card-panel red lighten-3">
+                        <i class="material-icons red-text darken-2 left">warning</i>
+                        <span class="white-text darken-4 center-align">Email incorredt !</span>
+                    </li>
+                    <li class="card-panel red lighten-3">
+                        <i class="material-icons red-text darken-2 left">warning</i>
+                        <span class="white-text darken-4 center-align">Email incorrect !</span>
+                    </li>
+                  </ul>
+
+                </div>
+              -->
+                <!--                end of all form error                              -->
+                <div class="row">
+                    <div class="input-field col s6 m6 l6">
+                      <p class="margin medium-small"><a routerLink="/register">Register Now!</a></p>
+                    </div>
+                    <div class="input-field col s6 m6 l6">
+                        <p class="margin right-align medium-small"><a href="#">Forgot password?</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
