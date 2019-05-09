@@ -1,78 +1,104 @@
 <div class="container">
-  <p class="header center-align flow-text grey-text text-darken-2">REGISTER FORM </p>
+
 
   <div id="pregister-page" class="row">
     <div class="col s12 z-depth-6 card-panel">
+        <div class="card-action">
+            <p class="header center-align flow-text grey-text text-darken-2">REGISTER FORM </p>
+            <!--  social media    -->
+            <div class="row">
+              <div class="nav-wrapper" >
+                <ul class="center-align" >
+                  <li style="display: inline-block">
+                    <a class="tooltipped btn-floating btn-small" data-tooltip="Google">
+                      <i class="fab fa-google"></i>
+                    </a>
+                  </li>
+                  <li style="display: inline-block;margin-left: 2px;margin-right: 2px">
+                      <a class="tooltipped btn-floating btn-small blue darken-4" data-tooltip="Facebook">
+                        <i class="fab fa-facebook"></i>
+                      </a>
+                  </li>
+                  <li style="display: inline-block">
+                      <a class="tooltipped btn-floating btn-small blue lighten-1" data-tooltip="Twitter">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                  </li>
+                </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
       <!--   First form -> select account type     -->
-      <form class="pregister-form">
+      <form class="pregister-form" [formGroup]="registerForm"  class="login-form" (ngSubmit)="onSubmit()">
         <div class="row"></div>
         <div class="row">
             <div class="input-field col s12">
-                <select>
-                  <option value="" disabled selected>Creer un compte en tant que</option>
-                  <option value="1">Administrateur</option>
-                  <option value="2">Etudiant</option>
+                <select formControlName="accounType" required>
+                  <option *ngFor="let item of accounTypes" [value]="item.name" >{{ item.name }}</option>
+                  <!--<option value="" disabled selected>Login en tant que</option>-->
                 </select>
                 <label>Type de compte</label>
           </div>
 
         </div>
+        <!--  email   -->
         <div class="row">
           <div class="input-field col s12">
-            <a class="btn waves-effect waves-light right">
-              <span>Continue</span>
+
+            <input class="validate" id="email" name="email" type="email" formControlName="email" required>
+            <!--   show nom message   -->
+            <!--
+            <div id="nom-error">
+                <i class="material-icons red-text darken-2 left">warning</i>
+                <span class="red-text darken-4">Nom invalid !</span>
+            </div>
+            -->
+            <label for="email" data-error="wrong" data-success="right">Email</label>
+          </div>
+        </div>
+
+        <!--  password   -->
+        <div class="row">
+            <div class="input-field col s12">
+
+              <input class="validate" id="password" name="password" type="password" formControlName="password" required>
+              <!--   show nom message   -->
+              <!--
+              <div id="nom-error">
+                  <i class="material-icons red-text darken-2 left">warning</i>
+                  <span class="red-text darken-4">Nom invalid !</span>
+              </div>
+              -->
+              <label for="password" data-error="wrong" data-success="right">Password</label>
+            </div>
+        </div>
+
+        <!--  confirm password   -->
+        <div class="row">
+            <div class="input-field col s12">
+
+              <input class="validate" id="confirm_password" name="confirmPassword" type="password" formControlName="confirmPassword" required>
+              <!--   show nom message   -->
+              <!--
+              <div id="nom-error">
+                  <i class="material-icons red-text darken-2 left">warning</i>
+                  <span class="red-text darken-4">Nom invalid !</span>
+              </div>
+              -->
+              <label for="confirm_password" data-error="wrong" data-success="right">Confirm Password</label>
+            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <button type="submit" class="btn waves-effect waves-light right" [disabled]="registerForm.invalid">
+              <span>REGISTER</span>
               <i class="material-icons right">send</i>
-            </a>
+            </button>
           </div>
         </div>
       </form>
     </div>
-
-
-    <!--   second form registration data     -->
-    <div class="row">
-        <div class="col s12 z-depth-6 card-panel">
-          <form class="register-form">
-            <div class="row"></div>
-          <!--  Nom   -->
-          <div class="row">
-              <div class="input-field col s12">
-
-                <input class="validate" id="nom" type="text">
-                <!--   show nom message   -->
-                <!--
-                <div id="nom-error">
-                    <i class="material-icons red-text darken-2 left">warning</i>
-                    <span class="red-text darken-4">Nom invalid !</span>
-                </div>
-                -->
-                <label for="nom" data-error="wrong" data-success="right">Nom</label>
-              </div>
-          </div>
-
-          <!--  Prenom   -->
-          <div class="row">
-              <div class="input-field col s12">
-
-                <input class="validate" id="prenom" type="text">
-                <!--   show nom message   -->
-                <!--
-                <div id="nom-error">
-                    <i class="material-icons red-text darken-2 left">warning</i>
-                    <span class="red-text darken-4">Nom invalid !</span>
-                </div>
-                -->
-                <label for="prenom" data-error="wrong" data-success="right">Prenom</label>
-              </div>
-          </div>
-
-          </form>
-        </div>
-    </div>
-
-
-
-
   </div>
 
 
