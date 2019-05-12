@@ -37,8 +37,10 @@
 
 
                         <select formControlName="accounType" required>
-                          <option *ngFor="let item of accounTypes" [value]="item.name" >{{ item.name }}</option>
-                          <!--<option value="" disabled selected>Login en tant que</option>-->
+                          <!--<option *ngFor="let item of accounTypes" [value]="item.name" >{{ item.name }}</option>-->
+                          <option value="" disabled selected>Login en tant que</option>
+                          <option>etudiant</option>
+                          <option>admin</option>
                         </select>
                         <label>Type de compte</label>
 
@@ -51,14 +53,14 @@
                       <i class="material-icons prefix">email</i>
                       <input class="validate" id="email" name="email" type="email" formControlName="email" required>
                       <!--   show message   -->
-
+                      <!--
                       <div *ngIf="submitted && f.email.errors">
                         <div id="email-error"  *ngIf="f.email.errors.required">
                             <i class="material-icons red-text darken-2 left">warning</i>
                             <span class="red-text darken-4">Email invalid !</span>
                         </div>
                       </div>
-
+                      -->
                       <label for="email" data-error="wrong" data-success="right">Email</label>
                     </div>
                 </div>
@@ -69,13 +71,14 @@
                       <i class="material-icons prefix">lock</i>
                       <input id="passw" type="password" name="password" formControlName="password" required>
                       <!--  show messages  -->
+                      <!--
                       <div *ngIf="submitted && f.password.errors">
                           <div id="email-error"  *ngIf="f.password.errors.required">
                               <i class="material-icons red-text darken-2 left">warning</i>
                               <span class="red-text darken-4">Password invalid !</span>
                           </div>
-                        </div>
-
+                      </div>
+                      -->
                       <label for="passw">Password</label>
                     </div>
                 </div>

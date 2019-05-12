@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { Admin } from './../../model/admin.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControlOptions, AsyncValidatorFn } from '@angular/forms';
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   submitted=false;
 
 
-  constructor(private form:FormBuilder,private router:Router) { }
+  constructor(private form:FormBuilder,private router:Router,private authService:AuthService) { }
 
   ngOnInit() {
     //JQuery

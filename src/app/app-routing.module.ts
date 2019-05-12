@@ -13,6 +13,9 @@ const routes: Routes = [
 
   {path:'**', component:ErrorComponent, pathMatch:'full'},
 
+
+  //{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
+
 ];
 
 @NgModule({

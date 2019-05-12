@@ -1,3 +1,5 @@
+import { AuthGuardService } from './service/auth-guard.service';
+import { AuthService } from './service/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +11,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ErrorComponent } from './404/error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EtudiantSpaceComponent } from './etudiant/etudiant-space/etudiant-space.component';
+import { AdminSpaceComponent } from './admin/admin-space/admin-space.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
 
-    ErrorComponent
+    ErrorComponent,
+
+    EtudiantSpaceComponent,
+
+    AdminSpaceComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
