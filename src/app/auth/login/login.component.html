@@ -39,8 +39,8 @@
                         <select formControlName="accounType" required>
                           <!--<option *ngFor="let item of accounTypes" [value]="item.name" >{{ item.name }}</option>-->
                           <option value="" disabled selected>Login en tant que</option>
-                          <option>etudiant</option>
-                          <option>admin</option>
+                          <option>User</option>
+                          <option>Admin</option>
                         </select>
                         <label>Type de compte</label>
 
@@ -83,15 +83,11 @@
                     </div>
                 </div>
 
-
+                <!--
                 <div class="row">
 
                     <div class="input-field col s12 m12 l12  login-text">
-                      <!--
-                        <input type="checkbox" id="remember-me" />
 
-                        <label for="remember-me">Remember me</label>
-                      -->
                         <label class="right">
                           <input type="checkbox"  class="filled-in"/>
                           <span>Remember me !</span>
@@ -100,6 +96,7 @@
 
 
                 </div>
+                -->
                 <div class="row">
                     <div class="input-field col s12">
                       <button [disabled]="loginForm.invalid" type="submit" class="btn waves-effect waves-light right">
@@ -127,17 +124,14 @@
               -->
                 <!--                end of all form error                              -->
 
-
+                <!--
                 <div class="row">
-                  <!--
-                    <div class="input-field col s6 m6 l6">
-                      <p class="margin medium-small"><a routerLink="/register">Register Now!</a></p>
-                    </div>
-                  -->
                     <div class="input-field col s6 m6 l6 right">
                         <p class="margin right-align medium-small"><a href="#">Forgot password?</a></p>
                     </div>
+
                 </div>
+                -->
             </form>
         </div>
     </div>

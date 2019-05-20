@@ -1,3 +1,4 @@
+import { AuthService } from './service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 declare var $: any;
@@ -10,13 +11,28 @@ declare var $: any;
 export class AppComponent implements OnInit {
   title = 'dotNetCoreProject';
 
+  adminIsAutheticated:boolean;
+
+
+  constructor(private authService:AuthService){
+    authService.adminAuthenticated.subscribe(state=>this.isAdminAutheticated(state));
+  }
 
 
   ngOnInit() {
     $(document).ready(() => {
       $('.sidenav').sidenav();
+      $('.dropdown-trigger').dropdown();
     });
+
+    //TypeScript
+
+
   }
 
+  private isAdminAutheticated(state:boolean):void{
+    this.adminIsAutheticated=state;
+    console.log(this.adminIsAutheticated);
+  }
 
 }

@@ -1,18 +1,28 @@
-<div class="navbar-fixed">
+<div *ngIf="!adminIsAutheticated"  class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper white">
-      <a href="#!" class="brand-logo valign-wrapper">
-        <img  src="assets/images/ensa.png" weidth="80px" height="55" class="logo-ensa"/>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo valign-wrapper amber-text darken-2 a-logo">
+        <!--<img  src="assets/images/shpingLogo.png" weidth="120px" height="50" class="logo-ensa"/>-->
+        <!-- logo color= #e4e225 -->
+        <span class="white-text">SHOPY</span>STORE.
       </a>
       <a class="sidenav-trigger" data-target="mobile-links">
-        <i class="material-icons black-text">menu</i>
+        <i class="material-icons white-text">menu</i>
       </a>
       <ul class="right hide-on-med-and-down">
 
-        <li><a class="black-text lighten-3" routerLink="/">Home</a></li>
-        <li><a href="#dep" class="black-text lighten-3">Departements</a></li>
-        <li><a routerLink="login" class=" btn waves-effect waves-light">Login </a></li>
-        <li><a routerLink="register" class="btn waves-effect waves-light">Register</a></li>
+        <li><a class="text-white" routerLink="/">HOME</a></li>
+        <li><a href="#" class="text-white">ARTICLES</a></li>
+        <li><a href="#cont" class="text-white">CONTACT</a></li>
+        <!-- Dropdown Trigger -->
+        <li>
+          <a class="dropdown-trigger btn-floating amber pulse  waves-effect waves-light" data-target='dropdown1'>
+            <i class="material-icons">person</i>
+          </a>
+        </li>
+
+        <!--  End dropDown  -->
+
       </ul>
     </div>
   </nav>
@@ -20,12 +30,22 @@
 
 <!--  mobile links !  -->
 <ul class="sidenav" id="mobile-links">
-    <li><a class="black-text lighten-3" routerLink="/">Home</a></li>
-    <li><a href="#dep" class="black-text lighten-3">Departements</a></li>
-    <li><a routerLink="login" class=" black-text lighten-3">Login </a></li>
-    <li><a routerLink="register" class="black-text lighten-3">Register</a></li>
+    <li><a class="black-text lighten-3" routerLink="/">HOME</a></li>
+    <li><a href="#" class="black-text lighten-3">ARTICLES</a></li>
+    <li><a href="#cont" class="text-white">CONTACT</a></li>
+    <li><a routerLink="login" class="black-text lighten-3">LOGIN </a></li>
+    <li><a routerLink="register" class="black-text lighten-3">REGISTER</a></li>
 
 </ul>
+<!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li>
+      <a routerLink="login" class="">LOGIN </a>
+    </li>
+    <li>
+      <a routerLink="register" class="">REGISTER</a>
+    </li>
+  </ul>
 <router-outlet></router-outlet>
 
 

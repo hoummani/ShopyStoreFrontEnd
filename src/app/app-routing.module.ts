@@ -1,3 +1,5 @@
+import { EtudiantSpaceComponent } from './etudiant/etudiant-space/etudiant-space.component';
+import { AdminSpaceComponent } from './admin/admin-space/admin-space.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -10,7 +12,9 @@ const routes: Routes = [
 
   {path:'login', component:LoginComponent, pathMatch:'full'},
   {path:'register', component:RegisterComponent, pathMatch:'full'},
+  {path:'adminHome', component:AdminSpaceComponent, pathMatch:'full'},
 
+  {path:'etudiantHome', component:EtudiantSpaceComponent, pathMatch:'full'},
   {path:'**', component:ErrorComponent, pathMatch:'full'},
 
 

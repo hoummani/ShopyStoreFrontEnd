@@ -1,9 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  //adminAuthenticated:boolean;
+
+  @Output() adminAuthenticated: EventEmitter<any> = new EventEmitter();
+
 
   constructor() { }
 
@@ -19,5 +24,14 @@ export class AuthService {
 
   public logout(){
     //localStorage.removeItem('ACCESS_TOKEN');
+  }
+  //============ Admin Space ==================
+  public isAdminAuthenticated(){
+    return this.adminAuthenticated;
+  }
+
+  public onLoginAdmin(){
+    let state=true;
+    this.adminAuthenticated.emit(state);
   }
 }
