@@ -18,6 +18,15 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
+import { AdminAnalyticsComponent } from './admin/admin-analytics/admin-analytics.component';
+import { AdminClientsComponent } from './admin/admin-clients/admin-clients.component';
+import { AdminArticlesComponent } from './admin/admin-articles/admin-articles.component';
+import { AdminCategoriesComponent } from './admin/admin-categories/admin-categories.component';
+
+import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +39,18 @@ import { ToastrModule } from 'ngx-toastr';
 
     EtudiantSpaceComponent,
 
-    AdminSpaceComponent
+    AdminSpaceComponent,
+
+    AdminProfileComponent,
+
+    AdminAnalyticsComponent,
+
+    AdminClientsComponent,
+
+    AdminArticlesComponent,
+
+    AdminCategoriesComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +61,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
 
-    AppRoutingModule,
+    AppRoutingModule, MatTableModule, MatPaginatorModule, MatSortModule,MatFormFieldModule,
 
   ],
   providers: [

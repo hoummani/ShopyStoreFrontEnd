@@ -1,0 +1,152 @@
+<!--    main content    -->
+<div>
+  <div class="row">
+    <p class=" flow-text grey-text header" style="margin-left: 7px">Dashboard > Analytics</p>
+    <div class="divider"></div>
+    <div class="col l6 m6 s12">
+
+      <div class="card-panel z-depth-1 center">
+        <h5>Daily Orders <span><i class="material-icons tiny teal-text">open_in_new</i></span></h5>
+        <div class="chart">
+          <canvas baseChart
+            [datasets]="barCharData"
+            [labels]="barCharLabels"
+
+            [options]="barCharOptions"
+            [legend]="barCharLegend"
+            [chartType]="barCharType">
+          </canvas>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col l6 m6 s12">
+      <div class="card-panel z-depth-1 center">
+        <h5>Earning <span><i class="material-icons tiny purple-text">open_in_new</i></span></h5>
+        <div class="chart">
+          <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <!--    line chart    -->
+  <div class="row">
+     <div class="col l12 m12 s12">
+       <div class="card-panel z-depth-1 center">
+         <h5>Views<span><i class="material-icons tiny purple-text">open_in_new</i></span></h5>
+         <div class="chart">
+           <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+            </canvas>
+         </div>
+       </div>
+     </div>
+  </div>
+  <div class="row">
+    <!--   posts     -->
+    <p class=" flow-text grey-text header" style="margin-left: 7px">Dashboard > Social</p>
+    <div class="divider"></div>
+    <div class="col l6 m6 s12">
+      <div class="card-panel">
+        <ul class="collection with-header">
+          <li class="collection-header purple lighten-1">
+            <h5 class="white-text center">Recent Posts</h5>
+          </li>
+          <li class="collection-item">
+            <a class="purple-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
+            <span>
+              <i class="material-icons tiny purple-text">edit</i>Edit |
+              <i class="material-icons tiny red-text">clear</i>Remove |
+              <i class="material-icons tiny blue-text">share</i>Share
+            </span>
+          </li>
+          <li class="collection-item">
+            <a class="purple-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
+            <span>
+              <i class="material-icons tiny purple-text">edit</i>Edit |
+              <i class="material-icons tiny red-text">clear</i>Remove |
+              <i class="material-icons tiny blue-text">share</i>Share
+            </span>
+          </li>
+          <li class="collection-item">
+            <a class="purple-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
+            <span>
+              <i class="material-icons tiny purple-text">edit</i>Edit |
+              <i class="material-icons tiny red-text">clear</i>Remove |
+              <i class="material-icons tiny blue-text">share</i>Share
+            </span>
+          </li>
+          <li class="collection-item">
+            <a class="purple-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
+            <span>
+              <i class="material-icons tiny purple-text">edit</i>Edit |
+              <i class="material-icons tiny red-text">clear</i>Remove |
+              <i class="material-icons tiny blue-text">share</i>Share
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--  Comments  -->
+    <div class="col l6 m6 s12">
+      <div class="card-panel">
+        <ul class="collection with-header">
+          <li class="collection-header purple lighten-1">
+            <h5 class="white-text center">Recent Comments</h5>
+          </li>
+          <li class="collection-item">
+            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
+            <span class="purple-text">
+              <i class="material-icons tiny green-text">done</i>Approve |
+              <i class="material-icons tiny red-text">clear</i>Remove
+
+            </span>
+          </li>
+          <li class="collection-item">
+            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
+            <span class="purple-text">
+              <i class="material-icons tiny green-text">done</i>Approve |
+              <i class="material-icons tiny red-text">clear</i>Remove
+
+            </span>
+          </li>
+          <li class="collection-item">
+            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
+            <span class="purple-text">
+              <i class="material-icons tiny green-text">done</i>Approve |
+              <i class="material-icons tiny red-text">clear</i>Remove
+
+            </span>
+          </li>
+          <li class="collection-item">
+            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
+            <span class="purple-text">
+              <i class="material-icons tiny green-text">done</i>Approve |
+              <i class="material-icons tiny red-text">clear</i>Remove
+
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

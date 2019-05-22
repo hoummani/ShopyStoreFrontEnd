@@ -1,25 +1,8 @@
 
-<!--   Navigation     -->
-<!--
-<nav class="teal lighten-2">
-  <div class="nav-wrapper">
-    <div class="container">
-      <a class="brand-logo">SHOPY STORE</a>
-      <a class="button-collapse show-on-large">
-        <i class="material-icons" data-activates="sidenav">menu</i>
-      </a>
-      <ul class="right hide-on-small-and-down collection">
-        <li class="collection-item avatar teal lighten-2" style="background: transparent">
-          <i class="material-icons white teal-text circle">notifications-active</i>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
--->
+
 <div  class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper teal lighten-2">
+    <div class="nav-wrapper purple lighten-1">
       <a href="#!" class="brand-logo valign-wrapper amber-text darken-2 center a-logo">
 
         <!-- logo color= #e4e225 -->
@@ -29,74 +12,62 @@
       <ul class="right hide-on-med-and-down">
 
         <li>
-          <a class="btn-floating amber pulse  waves-effect waves-light">
+          <a class="btn-floating amber  waves-effect waves-light">
             <i class="material-icons">notifications_active</i>
           </a>
         </li>
 
       </ul>
     </div>
+
   </nav>
+
 </div>
-<!--  sidenav  -->
-<!--
-<ul class="side-nav fixed" id="sidenav">
-  <li>
-    <div class="user-view">
-      <div class="background">
-        <img src="assets/images/shop/clark-street-mercantile-33919-unsplash.jpg" class="responsive-img"/>
-      </div>
-      <a href="#">
-        <img src="assets/images/team-2.jpg"/>
-      </a>
-    </div>
-  </li>
-</ul>
--->
+
 
 <!--   side nav fixe     -->
 <ul id="slide-out" class="sidenav sidenav-fixed">
     <li><div class="user-view">
       <div class="background">
-        <img src="assets/images/shop/bag-1609281_640.jpg" class="responsive-img"/>
+        <img src="assets/images/shop/roll-the-dice-1502706_640.jpg" class="responsive-img"/>
       </div>
       <a href="#user"><img class="circle" src="assets/images/team-2.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#name"><span class="white-text name "><strong>John Doe</strong></span></a>
+      <a href="#email"><span class="white-text email"><strong>john.Doa@gmail.com</strong></span></a>
     </div></li>
     <li>
-      <a href="#" class="teal-text waves-effect">
-        <i class="material-icons teal-text">dashboard</i>
+      <a href="#" class="purple-text waves-effect">
+        <i class="material-icons purple-text">dashboard</i>
         Dashboard
       </a>
     </li>
     <li>
-      <a href="#" class="teal-text waves-effect">
-        <i class="material-icons teal-text">person</i>
+      <a  class="purple-text waves-effect">
+        <i class="material-icons purple-text">person</i>
         Profile
       </a>
     </li>
     <li>
-      <a href="#" class="teal-text waves-effect">
-        <i class="material-icons teal-text">people</i>
+      <a href="#" class="purple-text waves-effect">
+        <i class="material-icons purple-text">people</i>
         Clients
       </a>
     </li>
     <li>
-      <a href="#" class="teal-text waves-effect">
-        <i class="material-icons teal-text">business</i>
+      <a href="#" class="purple-text waves-effect">
+        <i class="material-icons purple-text">business</i>
         Categories
       </a>
     </li>
     <li>
-      <a  data-target="articles" class="teal-text waves-effect">
-        <i class="material-icons teal-text">library_books</i>
+      <a  data-target="articles" class="purple-text waves-effect">
+        <i class="material-icons purple-text">library_books</i>
         Articles
       </a>
     </li>
     <li>
-      <a  data-target="analytics" class="teal-text waves-effect">
-        <i class="material-icons teal-text">trending_up</i>
+      <a  data-target="analytics" class="purple-text waves-effect">
+        <i class="material-icons purple-text">trending_up</i>
         Analytics
       </a>
     </li>
@@ -104,181 +75,28 @@
     <li><div class="divider"></div></li>
     <li><a class="subheader">Account state</a></li>
     <li>
-      <a href="#" class="teal-text waves-effect">
-        <i class="material-icons teal-text">input</i>
+      <a href="#" class="purple-text waves-effect">
+        <i class="material-icons purple-text">input</i>
         Logout
       </a>
     </li>
 </ul>
 
-<!--    main content    -->
-<div class="main" id="analytics">
-  <div class="row">
-    <div class="col l6 m6 s12">
-      <div class="card-panel z-depth-1 center">
-        <h5>Daily Orders <span><i class="material-icons tiny teal-text">open_in_new</i></span></h5>
-        <div class="chart">
-          <canvas baseChart
-            [datasets]="barCharData"
-            [labels]="barCharLabels"
-
-            [options]="barCharOptions"
-            [legend]="barCharLegend"
-            [chartType]="barCharType">
-          </canvas>
-
-        </div>
-      </div>
-    </div>
-    <!--
-    <div class="col xl4 l6 m6 s12">
-      <div class="card-panel z-depth-1 center">
-        <h5>Views <span><i class="material-icons tiny teal-text">open_in_new</i></span></h5>
-        <div class="chart">
-          <canvas baseChart
-            [data]="doughnutChartData"
-            [labels]="doughnutChartLabels"
-            [chartType]="doughnutChartType">
-      </canvas>
-
-        </div>
-      </div>
-    </div>
-    -->
-    <div class="col l6 m6 s12">
-      <div class="card-panel z-depth-1 center">
-        <h5>Earning <span><i class="material-icons tiny teal-text">open_in_new</i></span></h5>
-        <div class="chart">
-          <canvas baseChart
-            [data]="pieChartData"
-            [labels]="pieChartLabels"
-            [chartType]="pieChartType"
-            [options]="pieChartOptions"
-            [colors]="pieChartColors"
-            [legend]="pieChartLegend">
-          </canvas>
-        </div>
-      </div>
-    </div>
 
 
 
-  </div>
-  <!--    line chart    -->
-  <div class="row">
-     <div class="col l12 m12 s12">
-       <div class="card-panel z-depth-1 center">
-         <h5>Views<span><i class="material-icons tiny teal-text">open_in_new</i></span></h5>
-         <div class="chart">
-           <canvas baseChart
-                [datasets]="lineChartData"
-                [labels]="lineChartLabels"
-                [options]="lineChartOptions"
-                [colors]="lineChartColors"
-                [legend]="lineChartLegend"
-                [chartType]="lineChartType"
+<!--Router components-->
+<div class="main">
+  <app-admin-analytics ></app-admin-analytics>
 
-                (chartHover)="chartHovered($event)"
-                (chartClick)="chartClicked($event)">
-            </canvas>
-         </div>
-       </div>
-     </div>
-  </div>
-  <div class="row">
-    <!--   posts     -->
-    <div class="col l6 m6 s12">
-      <div class="card-panel">
-        <ul class="collection with-header">
-          <li class="collection-header teal lighten-2">
-            <h5 class="white-text center">Recent Posts</h5>
-          </li>
-          <li class="collection-item">
-            <a class="teal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
-            <span>
-              <i class="material-icons tiny teal-text">edit</i>Edit |
-              <i class="material-icons tiny red-text">clear</i>Remove |
-              <i class="material-icons tiny blue-text">share</i>Share
-            </span>
-          </li>
-          <li class="collection-item">
-            <a class="teal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
-            <span>
-              <i class="material-icons tiny teal-text">edit</i>Edit |
-              <i class="material-icons tiny red-text">clear</i>Remove |
-              <i class="material-icons tiny blue-text">share</i>Share
-            </span>
-          </li>
-          <li class="collection-item">
-            <a class="teal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
-            <span>
-              <i class="material-icons tiny teal-text">edit</i>Edit |
-              <i class="material-icons tiny red-text">clear</i>Remove |
-              <i class="material-icons tiny blue-text">share</i>Share
-            </span>
-          </li>
-          <li class="collection-item">
-            <a class="teal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</a><br>
-            <span>
-              <i class="material-icons tiny teal-text">edit</i>Edit |
-              <i class="material-icons tiny red-text">clear</i>Remove |
-              <i class="material-icons tiny blue-text">share</i>Share
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!--  Comments  -->
-    <div class="col l6 m6 s12">
-      <div class="card-panel">
-        <ul class="collection with-header">
-          <li class="collection-header teal lighten-2">
-            <h5 class="white-text center">Recent Comments</h5>
-          </li>
-          <li class="collection-item">
-            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
-            <span class="teal-text">
-              <i class="material-icons tiny green-text">done</i>Approve |
-              <i class="material-icons tiny red-text">clear</i>Remove
-
-            </span>
-          </li>
-          <li class="collection-item">
-            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
-            <span class="teal-text">
-              <i class="material-icons tiny green-text">done</i>Approve |
-              <i class="material-icons tiny red-text">clear</i>Remove
-
-            </span>
-          </li>
-          <li class="collection-item">
-            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
-            <span class="teal-text">
-              <i class="material-icons tiny green-text">done</i>Approve |
-              <i class="material-icons tiny red-text">clear</i>Remove
-
-            </span>
-          </li>
-          <li class="collection-item">
-            <h6 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ducimus!</h6><br>
-            <span class="teal-text">
-              <i class="material-icons tiny green-text">done</i>Approve |
-              <i class="material-icons tiny red-text">clear</i>Remove
-
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <app-admin-profile></app-admin-profile>
+  <app-admin-clients></app-admin-clients>
+  <!--<app-clients-table></app-clients-table>-->
 </div>
 
 
-<!--   articles   -->
-<div class="" id="articles">
-  <h2>Articles</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas blanditiis voluptatum optio. Officia quas amet dolor quasi maiores, reiciendis exercitationem! Qui labore delectus unde dolores, iusto tenetur obcaecati. Incidunt consectetur obcaecati ipsam pariatur consequatur debitis odio laborum cumque. Doloremque neque ipsum quo ex nisi, esse voluptatibus id itaque autem quos.</p>
-</div>
+
+
 
 <!--  fixed button    -->
 <div class="fixed-action-btn">
@@ -290,17 +108,17 @@
 
 <!--   footer   -->
 
-<footer class="teal lighten-2 page-footer">
+<footer class="purple lighten-1 page-footer" style="clear:both">
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h5 class="white-text">SHOP STORE DASHBOARD</h5>
+        <h5 class="white-text">SHOPYSTORE DASHBOARD</h5>
         <ul id='credits'>
           <li>
-            Gif Logo made using <a href="https://formtypemaker.appspot.com/" title="Form Type Maker">Form Type Maker</a> from <a href="https://github.com/romannurik/FORMTypeMaker" title="romannurik">romannurik</a>
+            Gif Logo made using <a class="amber-text" href="https://formtypemaker.appspot.com/" title="Form Type Maker">Form Type Maker</a> from <a class="amber-text" href="https://github.com/romannurik/FORMTypeMaker" title="romannurik">romannurik</a>
           </li>
           <li>
-            Icons made by <a href="https://material.io/icons/">Google</a>, available under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License Version 2.0</a>
+            Icons made by <a class="amber-text" href="https://material.io/icons/">Google</a>, available under <a class="amber-text" href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License Version 2.0</a>
           </li>
         </ul>
       </div>
@@ -308,7 +126,7 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-        <span>Made By <a style='font-weight: bold;' target="_blank">SHOP STORE TEAM</a></span>
+        <span>Made By <a class="amber-text" style='font-weight: bold;' target="_blank">SHOP STORE TEAM</a></span>
     </div>
   </div>
 </footer>
