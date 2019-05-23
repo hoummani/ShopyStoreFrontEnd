@@ -12,10 +12,12 @@
       <ul class="right hide-on-med-and-down">
 
         <li>
-          <a class="btn-floating amber  waves-effect waves-light">
+          <a class="btn-floating amber darken-2  waves-effect waves-light">
             <i class="material-icons">notifications_active</i>
           </a>
+          <!--<a><span class="badge white-text red circle">2</span></a>-->
         </li>
+
 
       </ul>
     </div>
@@ -31,44 +33,45 @@
       <div class="background">
         <img src="assets/images/shop/roll-the-dice-1502706_640.jpg" class="responsive-img"/>
       </div>
-      <a href="#user"><img class="circle" src="assets/images/team-2.jpg"></a>
-      <a href="#name"><span class="white-text name "><strong>John Doe</strong></span></a>
-      <a href="#email"><span class="white-text email"><strong>john.Doa@gmail.com</strong></span></a>
+      <a ><img class="circle" src="assets/images/team-2.jpg"></a>
+      <a ><span class="white-text name "><strong>John Doe</strong></span></a>
+      <a ><span class="white-text email"><strong>john.Doa@gmail.com</strong></span></a>
     </div></li>
     <li>
-      <a href="#" class="purple-text waves-effect">
+      <a routerLink="/adminHome" class="purple-text waves-effect" (click)="turnDashboard()">
         <i class="material-icons purple-text">dashboard</i>
         Dashboard
       </a>
     </li>
     <li>
-      <a  class="purple-text waves-effect">
+      <a  class="purple-text waves-effect" (click)="turnProfileOn()">
         <i class="material-icons purple-text">person</i>
         Profile
       </a>
     </li>
     <li>
-      <a href="#" class="purple-text waves-effect">
+      <a  class="purple-text waves-effect" (click)="turnClientsOn()">
         <i class="material-icons purple-text">people</i>
         Clients
       </a>
     </li>
     <li>
-      <a href="#" class="purple-text waves-effect">
+      <a  class="purple-text waves-effect" (click)="turnCategoryOn()">
         <i class="material-icons purple-text">business</i>
         Categories
       </a>
     </li>
     <li>
-      <a  data-target="articles" class="purple-text waves-effect">
+      <a   class="purple-text waves-effect" (click)="turnArticleOn()">
         <i class="material-icons purple-text">library_books</i>
         Articles
       </a>
     </li>
     <li>
-      <a  data-target="analytics" class="purple-text waves-effect">
+      <a   class="purple-text waves-effect" (click)="turnDashboard()">
         <i class="material-icons purple-text">trending_up</i>
         Analytics
+        <span class="new badge white-text red pulse">3</span>
       </a>
     </li>
 
@@ -87,10 +90,12 @@
 
 <!--Router components-->
 <div class="main">
-  <app-admin-analytics ></app-admin-analytics>
+  <app-admin-analytics id="spaceAnalytics" *ngIf="analyticsOn" ></app-admin-analytics>
 
-  <app-admin-profile></app-admin-profile>
-  <app-admin-clients></app-admin-clients>
+  <app-admin-profile id="spaceProfile" *ngIf="profileOn"></app-admin-profile>
+  <app-admin-clients id="spaceClients" *ngIf="clientsOn"></app-admin-clients>
+  <app-admin-categories id="spaceCategories" *ngIf="categoryOn"></app-admin-categories>
+  <app-admin-articles id="spaceArticles" *ngIf="articleOn"></app-admin-articles>
   <!--<app-clients-table></app-clients-table>-->
 </div>
 

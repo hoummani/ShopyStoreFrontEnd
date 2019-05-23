@@ -1,21 +1,32 @@
 <div class="row">
   <div class="col l12 m12 s12">
-    <p class=" flow-text amber-text header">Dashboard > Clients</p>
+    <p class=" flow-text grey-text darken-2 header">Dashboard > Clients</p>
 
     <div class="divider"></div>
     <div class="row">
       <div class="col l12 m12 s12">
         <div class="mat-elevation-z8">
           <div class="row">
-            <div class=" center-align">
-              <div class="input-field col s6">
+            <div class=" center-align col l6 m6 s6">
+              <div class="input-field col s6 l6 m6">
                 <i class="material-icons prefix">search</i>
                 <input id="icon_prefix" type="text" class="validate" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
               </div>
             </div>
+            <div class="col l6 m6 s6 right" style="margin: 25px auto">
+              <a class="btn amber">
+                <i class="material-icons left">add</i>
+                <span>New Client</span>
 
+              </a>
+            </div>
           </div>
-          <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+          <!--   mat table   -->
+
+
+
+          <!--   end mat table     -->
+          <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 table-responsive">
 
             <!-- Position Column -->
             <ng-container matColumnDef="position">

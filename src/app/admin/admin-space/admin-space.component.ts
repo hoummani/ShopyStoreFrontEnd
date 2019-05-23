@@ -8,6 +8,11 @@ declare var $: any;
 })
 export class AdminSpaceComponent implements OnInit {
 
+  profileOn=false;
+  clientsOn=false;
+  categoryOn=false;
+  articleOn=false;
+  analyticsOn=true;
 
   constructor() { }
 
@@ -19,6 +24,30 @@ export class AdminSpaceComponent implements OnInit {
 
   }
 
+  //Routing components
+  turnProfileOn(){
+    this.profileOn=true;
+    this.articleOn=this.categoryOn=this.clientsOn=this.analyticsOn=false;
+
+  }
+  turnDashboard(){
+    this.analyticsOn=true;
+    this.articleOn=this.categoryOn=this.clientsOn=this.profileOn=false;
+  }
 
 
+  turnClientsOn(){
+    this.clientsOn=true;
+    this.articleOn=this.categoryOn=this.analyticsOn=this.profileOn=false;
+  }
+
+  turnCategoryOn(){
+    this.categoryOn=true;
+    this.articleOn=this.clientsOn=this.analyticsOn=this.profileOn=false;
+  }
+
+  turnArticleOn(){
+    this.articleOn=true;
+    this.categoryOn=this.clientsOn=this.analyticsOn=this.profileOn=false;
+  }
 }
