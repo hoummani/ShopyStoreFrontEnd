@@ -1,6 +1,7 @@
+import { Client } from './../../model/client.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { Etudiant } from 'src/app/model/etudiant.model';
+
 import { Admin } from 'src/app/model/admin.model';
 import { Router } from '@angular/router';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
@@ -16,7 +17,7 @@ declare var $: any;
 export class RegisterComponent implements OnInit {
 
   accounTypes=[{'id':1,'name':'etudiant'},{'id':2,'name':'admin'}];
-  etudiant:Etudiant;
+  client:Client;
   admin:Admin;
   registerForm:FormGroup;
   submitted=false;

@@ -10,7 +10,6 @@ import {
   AbstractControlOptions,
   AsyncValidatorFn
 } from "@angular/forms";
-import { Etudiant } from "src/app/model/etudiant.model";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
 
 
   accounTypes = [{ id: 1, name: "etudiant" }, { id: 2, name: "admin" }];
-  etudiant: Etudiant;
+
   admin: Admin;
   loginForm: FormGroup;
   submitted = false;
