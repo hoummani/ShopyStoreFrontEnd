@@ -26,6 +26,11 @@ import { AdminCategoriesComponent } from './admin/admin-categories/admin-categor
 
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ClientSpaceComponent } from './client/client-space/client-space.component';
+import { ClientArticlesComponent } from './client/client-articles/client-articles.component';
+import { ClientCartComponent } from './client/client-cart/client-cart.component';
+import { ClientConverterComponent } from './client/client-converter/client-converter.component';
+import { ClientOrderComponent } from './client/client-order/client-order.component';
 
 
 @NgModule({
@@ -41,6 +46,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AdminClientsComponent,
     AdminArticlesComponent,
     AdminCategoriesComponent,
+    ClientSpaceComponent,
+    ClientArticlesComponent,
+    ClientCartComponent,
+    ClientConverterComponent,
+    ClientOrderComponent,
   ],
   imports: [
     BrowserModule,

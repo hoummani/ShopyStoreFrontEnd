@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
+declare var $: any;
 
 export interface PeriodicElement {
   name: string;
@@ -47,6 +48,14 @@ export class AdminCategoriesComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
+
+    //JQuery
+    $(document).ready(() => {
+
+      $('.modal').modal();
+    });
+
+    //TypeScript
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
@@ -57,6 +66,7 @@ export class AdminCategoriesComponent implements OnInit {
 
   onUpdateClient(id){
     console.log("Update "+id);
+
     console.log();
   }
 

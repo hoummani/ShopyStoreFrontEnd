@@ -20,7 +20,9 @@ export class AdminSpaceComponent implements OnInit {
     $(document).ready(() => {
 
       $('.sidenav').sidenav();
+      //$('.materialboxed').materialbox();
     });
+
 
   }
 

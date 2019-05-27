@@ -12,10 +12,12 @@ export class AppComponent implements OnInit {
   title = 'dotNetCoreProject';
 
   adminIsAutheticated:boolean;
+  clientIsAuthenticated:boolean;
 
 
   constructor(private authService:AuthService){
     authService.adminAuthenticated.subscribe(state=>this.isAdminAutheticated(state));
+    authService.clientAuthenticated.subscribe(state=>this.isClientAutheticated(state));
   }
 
 
@@ -29,10 +31,16 @@ export class AppComponent implements OnInit {
 
 
   }
-
+  //--------------- Admin methods
   private isAdminAutheticated(state:boolean):void{
     this.adminIsAutheticated=state;
     console.log(this.adminIsAutheticated);
+  }
+
+  //------------- User methods
+  private isClientAutheticated(state:boolean):void{
+    this.clientIsAuthenticated=state;
+    console.log(this.clientIsAuthenticated);
   }
 
 }

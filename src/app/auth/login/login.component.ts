@@ -69,7 +69,9 @@ export class LoginComponent implements OnInit {
 
       //this.toastr.success('Hi ')
     } else if (connectedMan == "User") {
-      this.router.navigateByUrl('etudiantHome');
+      //this.authService.onLoginClient();
+      this.authService.onLoginAdmin();
+      this.router.navigateByUrl('clientHome');
       //this.toastr.error('Etudiant is broken', 'Major Error', {timeOut: 3000});
     }
   }

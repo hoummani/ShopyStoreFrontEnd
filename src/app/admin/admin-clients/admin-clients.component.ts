@@ -42,7 +42,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AdminClientsComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','update','delete'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','delete'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

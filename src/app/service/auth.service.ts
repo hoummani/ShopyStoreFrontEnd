@@ -9,7 +9,7 @@ export class AuthService {
 
   @Output() adminAuthenticated: EventEmitter<any> = new EventEmitter();
 
-
+  @Output() clientAuthenticated: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   public login(){
@@ -33,5 +33,11 @@ export class AuthService {
   public onLoginAdmin(){
     let state=true;
     this.adminAuthenticated.emit(state);
+  }
+
+  //------------- User Services
+  public onLoginClient(){
+    let state=true;
+    this.clientAuthenticated.emit(state);
   }
 }

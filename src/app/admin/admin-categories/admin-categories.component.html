@@ -15,12 +15,46 @@
               </div>
             </div>
             <div class="col l6 m6 s6 right" style="margin: 25px auto">
-              <a class="btn amber">
+              <a class="btn amber modal-trigger" href="#modal1" data-target="modal2">
                 <i class="material-icons left">add</i>
                 <span>New Category</span>
 
               </a>
             </div>
+            <!-- Modal Structure -->
+                <div id="modal2" class="modal">
+                  <div class="modal-content">
+                    <p class="flow-text center-align">Add New Category</p>
+                    <div class="divider"></div>
+                    <div class="row"></div>
+                    <!--    add category form    -->
+                    <div class="row">
+                      <form class="col s12">
+
+                        <div class="row">
+
+                          <div class="input-field col s12">
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Name</label>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <button  type="submit" class="btn waves-effect waves-light right">
+                              <span>Add</span>
+                              <i class="material-icons right">send</i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <a routerLink="/adminHome" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                  </div>
+                </div>
+                <!--   end of modal   -->
           </div>
           <!--   mat table   -->
 

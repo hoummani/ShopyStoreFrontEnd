@@ -1,6 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
+
+
 declare var $: any;
+
 
 export interface Article {
   designation: string;
@@ -9,8 +11,6 @@ export interface Article {
   photo:string;
 
 }
-
-
 
 const ELEMENT_DATA: Article[] = [
   {id:1, designation:"Xperia", price:250, photo:"assets/images/Articles/xperia.png"},
@@ -31,45 +31,37 @@ const ELEMENT_DATA: Article[] = [
 ];
 //------------------------------------------------->
 
-
 @Component({
-  selector: 'app-admin-articles',
-  templateUrl: './admin-articles.component.html',
-  styleUrls: ['./admin-articles.component.css']
+  selector: 'app-client-articles',
+  templateUrl: './client-articles.component.html',
+  styleUrls: ['./client-articles.component.css']
 })
-export class AdminArticlesComponent implements OnInit {
+export class ClientArticlesComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'designation', 'photo', 'price','update','delete'];
+  categories:string[]=['Camera','Laptop','Phone','Desktop'];
+  articles=ELEMENT_DATA;
+
+/*
+  displayedColumns: string[] = ['id', 'designation','photo', 'price','detail'];
   dataSource = new MatTableDataSource<Article>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
+  */
   ngOnInit() {
-    //JQuery
     $(document).ready(function(){
       $('.materialboxed').materialbox();
-      alert('ok !');
+      $('.select').formSelect();
+      //alert('ok !');
+
     });
-
-
     //TypeScript
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    //this.dataSource.paginator = this.paginator;
+    //this.dataSource.sort = this.sort;
   }
 
   applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  onUpdateClient(id){
-    console.log("Update "+id);
-    console.log();
-  }
-
-  onDeleteClient(position){
-    console.log("Delete "+position);
-    console.log();
+    //this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

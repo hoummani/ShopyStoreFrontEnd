@@ -1,24 +1,24 @@
-<div class="row">
-  <div class="col l12 m12 s12">
-    <p class=" flow-text grey-text darken-2 header">Dashboard > Articles</p>
-
-    <div class="divider"></div>
-    <div class="row">
+<section class="section">
+  <div class="row">
+    <div class="col l12 m12 s12">
+      <p class=" flow-text grey-text darken-2  header">My Cart</p>
+      <div class="divider"></div>
+      <div class="row">
       <div class="col l12 m12 s12">
         <div class="mat-elevation-z8">
           <div class="row">
             <div class=" center-align col l6 m6 s6">
               <div class="input-field col s6 l6 m6">
                 <i class="material-icons prefix">search</i>
-                <input id="articleSearch" type="text" class="validate" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                <input id="cartSearch" type="text" class="validate" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
               </div>
             </div>
             <div class="col l6 m6 s6 right" style="margin: 25px auto">
-              <a class="btn amber">
-                <i class="material-icons left">add</i>
-                <span>New Article</span>
-
-              </a>
+              <div class="container">
+                <div class="right-align">
+                  <h6>Global Price: <strong class="red-text">{{globalPrice}} $</strong></h6>
+                </div>
+              </div>
             </div>
           </div>
           <!--   mat table   -->
@@ -56,23 +56,15 @@
             </ng-container>
 
             <!-- update -->
-            <ng-container matColumnDef="update">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Update </th>
-              <td mat-cell *matCellDef="let element">
-                <a class="" style="cursor: pointer" (click)="onUpdateClient(element.position)">
-                  <i class="material-icons">update</i>
-                </a>
-              </td>
+            <ng-container matColumnDef="quantity">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+              <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
             </ng-container>
 
-             <!-- delete -->
-            <ng-container matColumnDef="delete">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
-              <td mat-cell *matCellDef="let element">
-                <a class="red-text" style="cursor: pointer" (click)="onDeleteClient(element.position)">
-                  <i class="material-icons">delete</i>
-                </a>
-              </td>
+             <!-- orderDate -->
+            <ng-container matColumnDef="orderDate">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+              <td mat-cell *matCellDef="let element">{{element.orderDate | date:"dd/MM/yy"}}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -81,8 +73,9 @@
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
         </div>
       </div>
+
     </div>
-
-
+    </div>
   </div>
-</div>
+</section>
+
