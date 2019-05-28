@@ -43,26 +43,26 @@
     </li>
 
     <li>
-      <a   class="purple-text waves-effect">
+      <a   class="purple-text waves-effect" (click)="triggerArticle()">
         <i class="material-icons purple-text">library_books</i>
         Articles
       </a>
     </li>
     <li>
-      <a routerLink="/clientHome" class="purple-text waves-effect">
+      <a  class="purple-text waves-effect" (click)="triggerCart()">
         <i class="material-icons purple-text">shopping_cart</i>
         Cart
       </a>
     </li>
     <li>
-      <a  class="purple-text waves-effect">
+      <a  class="purple-text waves-effect" (click)="triggerConverter()">
         <i class="material-icons purple-text">attach_money</i>
         Converter
       </a>
     </li>
 
     <li>
-      <a  class="purple-text waves-effect" >
+      <a  class="purple-text waves-effect" (click)="triggerOrder()">
         <i class="material-icons purple-text">business</i>
         Order
       </a>
@@ -81,13 +81,14 @@
 
 
 
+
 <!--Router components-->
 
 <div class="main">
-  <app-client-articles id="client-article"></app-client-articles>
-  <app-client-cart id="client-cart"></app-client-cart>
-  <app-client-converter id="client-converter"></app-client-converter>
-  <app-client-order id="client-order"></app-client-order>
+  <app-client-articles id="client-article" *ngIf="articleOn" ></app-client-articles>
+  <app-client-cart id="client-cart" *ngIf="cartOn" ></app-client-cart>
+  <app-client-converter id="client-converter" *ngIf="converterOn" ></app-client-converter>
+  <app-client-order id="client-order" *ngIf="orderOn" ></app-client-order>
 </div>
 
 
