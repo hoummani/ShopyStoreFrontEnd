@@ -1,3 +1,5 @@
+import { ArticleServiceService } from './service/article-service.service';
+import { CategoryServiceService } from './service/category-service.service';
 import { AuthGuardService } from './service/auth-guard.service';
 import { AuthService } from './service/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminSpaceComponent } from './admin/admin-space/admin-space.component';
 import { ChartsModule } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -24,8 +27,12 @@ import { AdminClientsComponent } from './admin/admin-clients/admin-clients.compo
 import { AdminArticlesComponent } from './admin/admin-articles/admin-articles.component';
 import { AdminCategoriesComponent } from './admin/admin-categories/admin-categories.component';
 
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatTableModule, MatPaginatorModule, MatSortModule} from '@angular/material';
+
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { MatFormFieldModule, MatSelectModule } from '@angular/material';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { ClientSpaceComponent } from './client/client-space/client-space.component';
 import { ClientArticlesComponent } from './client/client-articles/client-articles.component';
 import { ClientCartComponent } from './client/client-cart/client-cart.component';
@@ -58,15 +65,21 @@ import { ClientOrderComponent } from './client/client-order/client-order.compone
     FormsModule,
     CommonModule,
     ChartsModule,
+    HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
 
-    AppRoutingModule, MatTableModule, MatPaginatorModule, MatSortModule,MatFormFieldModule,
+    AppRoutingModule, MatTableModule, MatPaginatorModule, MatSortModule,MatFormFieldModule,MatDialogModule,
+    MatSelectModule,
+
+    NgxMatSelectSearchModule
 
   ],
   providers: [
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    CategoryServiceService,
+    ArticleServiceService
   ],
   bootstrap: [AppComponent]
 })

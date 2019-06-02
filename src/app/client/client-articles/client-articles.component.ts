@@ -1,4 +1,7 @@
+import { Category } from './../../model/category.model';
+import { CategoryServiceService } from './../../service/category-service.service';
 import {Component, OnInit} from '@angular/core';
+
 
 
 declare var $: any;
@@ -38,7 +41,9 @@ const ELEMENT_DATA: Article[] = [
 })
 export class ClientArticlesComponent implements OnInit {
 
-  categories:string[]=['Camera','Laptop','Phone','Desktop'];
+  constructor(public catService:CategoryServiceService){}
+
+  categories:Category[];
   articles=ELEMENT_DATA;
 
 /*
@@ -49,19 +54,36 @@ export class ClientArticlesComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   */
   ngOnInit() {
+
+    this.loadCategories();
+
     $(document).ready(function(){
       $('.materialboxed').materialbox();
       $('.select').formSelect();
-      //alert('ok !');
-
     });
     //TypeScript
+
+
     //this.dataSource.paginator = this.paginator;
     //this.dataSource.sort = this.sort;
   }
-
   applyFilter(filterValue: string) {
     //this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+
+  loadCategories(){
+    this.catService.getAllCategories().subscribe(data=>{
+      this.categories=data as Category[];
+    },
+    err=>{
+      console.log(err);
+    }
+    );
+  }
+
+
+  filterMyOptions(event){
+    console.log(event.name);
+  }
 }

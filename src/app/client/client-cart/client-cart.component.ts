@@ -41,7 +41,7 @@ export class ClientCartComponent implements OnInit {
   ngOnInit() {
     //Jquery
     $(document).ready(function(){
-
+      $('.materialboxed').materialbox();
 
     });
     //TypeScript
